@@ -1,21 +1,20 @@
 import { Router } from 'express';
 
+import SessionController from './app/controllers/SessionController';
+import StudentController from './app/controllers/StudentController';
+import authMiddleware from './app/middlewares/auth';
+
 const routes = new Router();
 
 // Login Admin do sistema, com usuario e senha
-routes.post('/gympoint/login', (req, res) => {});
+routes.post('/gympoint/login', SessionController.store);
 
-// Listagem de todos alunos
-routes.get('/gympoint/users', (req, res) => {});
-
-// Buscar um aluno
-routes.get('/gympoint/user', (req, res) => {});
+routes.use(authMiddleware);
 
 // Cadastro de aluno
-routes.post('/gympoint/users', (req, res) => {});
+routes.post('/gympoint/user', StudentController.store);
 
 // Update do aluno pelo email
-routes.put('/gympoint/users', (req, res) => {});
+// routes.put('/gympoint/user', StudentController.update;
 
-// Deletar um aluno
-routes.delete('/gympoint/users', (req, res) => {});
+export default routes;
