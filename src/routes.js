@@ -14,7 +14,7 @@ routes.use(authMiddleware);
 // Cadastro de aluno
 routes.post('/gympoint/user', StudentController.store);
 
-// Update do aluno pelo email
-// routes.put('/gympoint/user', StudentController.update;
+// Update do aluno
+routes.put('/gympoint/user', StudentController.update);
 
 export default routes;
