@@ -1,5 +1,4 @@
 # Gympoint
-Desafio 2 - Bootcamp Rockeseat
 
 ## :rocket: Sobre o desafio
 
